@@ -7,6 +7,41 @@
   <title>Imperium Automotriz</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+<!-- Ícono flotante de WhatsApp -->
+<a id="whatsapp-link" href="https://wa.me/5215512345678" target="_blank" class="whatsapp-button">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="60" />
+</a>
+
+<style>
+  .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+
+  .whatsapp-button img {
+    width: 60px;
+    height: 60px;
+  }
+</style>
+
+<script>
+  const numbers = [
+    "7714767039",  // Número 1
+    "7712890629",  // Número 2
+    "5625920474"   // Número 3
+  ];
+
+  let current = 0;
+  const link = document.getElementById("whatsapp-link");
+
+  setInterval(() => {
+    current = (current + 1) % numbers.length;
+    link.href = `https://wa.me/${numbers[current]}`;
+  }, 10000); // Cambia cada 10 segundos
+</script>
+
 </head>
 <body>
 
