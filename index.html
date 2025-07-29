@@ -2,6 +2,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Imperium Automotriz</title>
@@ -25,6 +31,30 @@
     height: 60px;
   }
 </style>
+  .swiper {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  background: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.swiper-slide img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.swiper-slide p {
+  font-size: 16px;
+  color: #333;
+}
 
 <script>
   const numbers = [
@@ -43,6 +73,24 @@
 </script>
 
 </head>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.sedanes-swiper', {
+    loop: true,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
+
 <body>
 
   <header>
@@ -53,6 +101,37 @@
     <nav>
       <a href="#">INICIO</a>
       <a href="#">SEDANES</a>
+        <div class="swiper sedanes-swiper">
+  <div class="swiper-wrapper">
+
+    <!-- Slide 1 -->
+    <div class="swiper-slide">
+      <img src="imagenes/sedan1.jpg" alt="Sedán 1" />
+      <p><strong>Volkswagen Jetta 2020</strong><br>Precio: $245,000 MXN</p>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="swiper-slide">
+      <img src="imagenes/sedan2.jpg" alt="Sedán 2" />
+      <p><strong>Nissan Versa 2021</strong><br>Precio: $210,000 MXN</p>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="swiper-slide">
+      <img src="imagenes/sedan3.jpg" alt="Sedán 3" />
+      <p><strong>Chevrolet Onix 2022</strong><br>Precio: $230,000 MXN</p>
+    </div>
+
+  </div>
+
+  <!-- Flechas -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+  <!-- Paginación -->
+  <div class="swiper-pagination"></div>
+</div>
+
       <a href="#">SUV’S</a>
       <a href="#">PICK UPS</a>
       <a href="#">MOTOS</a>
